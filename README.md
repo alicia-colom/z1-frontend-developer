@@ -1,46 +1,147 @@
-# Getting Started with Create React App
+# Z1 FrontEnd Developer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Prueba técnica para puesto de **Front-end Developer** en **[Z1.digital](https://z1.digital/)**
 
-In the project directory, you can run:
+### *By Alicia Colom* 👋
+------------
 
-### `yarn start`
+## 🔎 **OBJETIVO**
+Se trata de una app desarrollada en **React**, la cual conecta con una **API REST** que analiza fotos de documentos de identidad, y sigue el diseño del prototipo dado en **InVision**.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Desde el front se implementan los siguientes aspectos:
+- [ ] Accionar la cámara del dispositivo desde el que se accede a la app.
+- [ ] Tomar fotografía automáticamente al encajar en el encuadre dado.
+- [ ] Implementar botón *"Cancelar"* para volver a la pantalla principal.
+- [ ] Envío de la fotografía tomada a la API.
+- [ ] Recepción de la respuesta de la API tras analizar si es válida o no.
+- [ ] Gestión de las diferentes respuestas posibles.
+- [ ] Mostrar visualmente al usuario de la app si la fotografía es válida o no.
+- [ ] Redirigir a pantalla principal tras respuesta de la API.
+- [ ] Registrar la última fotografía tomada y:
+- [ ]  si es válida: mostrar imagen y mensaje de *"aceptada"*
+- [ ]  si no es válida: mostrar imagen, mensaje de *"rechazada"*, y botón para tomar nueva fotografía
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+------------
 
-### `yarn test`
+## 🛠️ **STACK TECNOLÓGICO:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- TypeScript
+- JSX
+- HTML5 + CSS3
+- Sass
+- Git + GitHub
+- npm
+- API REST
+- expo-camera
 
-### `yarn build`
+------------
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🗃️ **Estructura del proyecto**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src
+ ├─ public
+ |  ├─ index.hmtl
+ |  └─ favicon.ico
+ |
+ ├─ components
+ |  ├─ App.js _______ comp. principal
+ |  ├─ Landing.js _______ comp. de aterrizaje a la web
+ |  ├─ CharacterList.js _______ listado de personajes e input de búsqueda
+ |  ├─ CharacterCard.js _______ tarjeta de personaje que se renderiza en CharacterList.js
+ |  ├─ CharacterDetail.js _______ comp. con información general del personaje
+ |  ├─ Header.js _______ cabecera con logo y link a landing
+ |  ├─ Footer.js _______ pie de página con datos de autoría
+ |  ├─ Error.js _______ comp. de personaje inexistente
+ |  ├─ NotResults.js _______ comp. de búsqueda fallida
+ |  └─ Filters.js _______ comp. de trabajo para filtrados
+ |
+ ├─ images
+ |  └─ ...
+ |
+ ├─ services
+ |  └─ api.js _______ solicitud fetch a API
+ |
+ ├─ stylesheets
+ |  ├─ CharacterList.scss
+ |  ├─ CharacterCard.scss
+ |  ├─ CharacterDetail.scss
+ |  ├─ Error.scss
+ |  └─ ...
+ |
+ ├─ index.js
+ └─ index.scss
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+------------
 
-### `yarn eject`
+## ⚙️ **SCRIPTS DISPONIBLES**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### `npm start` o `yarn start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Arranca la palicación en modo desarrollo.
+Abre `http://localhost:3000` para visualizarla en el navegador.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+La página se actualizará automáticamente con cada cambio que ocurra en el código.
+Igualmente, se mostrarán los errores y los warning del lint en la consola.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### `npm test` o `yarn test`
 
-## Learn More
+Arranca el "test watcher" en modo interactivo
+Por defecto, se arrancan los tests relacionados con los archivos que hayan sufrido algún cambio desde el últimos commit.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+------------
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💻 **DESARROLLO**
+
+1. **Listado de personajes**
+
+Petición al API de servicio de datos, a través de campo de búsqueda a través de fetch, recibiendo de vuelta un JSON con la información de los personajes. 
+Endpoint del servicio de datos : https://rickandmortyapi.com/documentation/#get-all-characters
+
+2. **Pintar un listado de personajes**
+
+Recorriendo el array de datos con un método map, extrayendo y pintando información de cada personaje.
+
+3. **Filtrado de personajes**
+
+A través de un dos `<input>` (de tipo `radio` y de tipo `select`) se realiza un filtrado en la búsqueda realizada, pudiendo filtrar por uno o por los dos conceptos: GENERO y ESTADO. 
+Una vez filtrados, se renderiza de nuevo y aparece en la interfaz los personajes que cumplen esos requisitos. 
+
+4. **Utilizar React Router**
+
+Al hacer click sobre alguna de las tarjetas se pinta la tarjeta clicada a pantalla completa con el detalle de cada personaje. 
+En los detalles aparece la siguiente información: imagen, nombre, especie, planeta de origen, género,  número de episodios en los que aparece el personaje, listado de episodios, y si está vivo o muerto.
+
+------------
+
+## ✨ Detalles de calidad
+
+- Incluir el campo de texto dentro de una etiqueta `<form>` para cuidar la semántica.
+-  Impedir que el navegador envíe una petición o cambie de ruta al dar a intro sobre el campo de texto vacío aplicando un `prevent event default`.
+- Al entrar en detalles del personaje y volver al listado de personajes se debe poder leer el texto que se había incluido inicialmente en el campo de texto.
+ Para ello se recoge el valor del input y aplicando lifting se guarda en el estado del componente principal para bajarlo nuevamente al value del componente filters.
+
+*BONUS:* Mejoras visuales
+- Mostrar el estado del personaje con un icono.
+- Usar un sistema de grid para pintar el listado de personajes.
+- Cuidar el funcionamiento del responsive en dispositivos pequeños.
+
+*BONUS:* URL compartible
+- La URL del detalle del personaje debe ser compartible y poder acceder a ella visitándola directamente desde el navegador.
+
+------------
+
+## 💡 Improvements
+
+- Mostrar un mensaje de error si se introduce una ruta inexistente en el navegador.
+
+------------
+
+## 🚀 RESULTADO
+
+Puedes navegar por la aplicación en modo usuario siguiendo el siguiente enlace:
+
+#### **http://beta.adalab.es/modulo-3-evaluacion-final-alicia-colom/#/**
