@@ -1,9 +1,9 @@
 # Z1 FrontEnd Developer
 
-
 ## Prueba técnica para puesto de **Front-end Developer** en **[Z1.digital](https://z1.digital/)**
 
 ### *By Alicia Colom* 👋
+
 ------------
 
 ## 🔎 **OBJETIVO**
