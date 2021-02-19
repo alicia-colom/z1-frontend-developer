@@ -96,21 +96,20 @@ Por defecto, se arrancan los tests relacionados con los archivos que hayan sufri
 
 ## 💻 **DESARROLLO**
 
-1. **Listado de personajes**
+1. **Librería para cámara**
 
-Petición al API de servicio de datos, a través de campo de búsqueda a través de fetch, recibiendo de vuelta un JSON con la información de los personajes. 
-Endpoint del servicio de datos : https://rickandmortyapi.com/documentation/#get-all-characters
+Porqué he decidido usar esa librería para lanzar la cámara
 
-2. **Pintar un listado de personajes**
+2. **xxx**
 
 Recorriendo el array de datos con un método map, extrayendo y pintando información de cada personaje.
 
-3. **Filtrado de personajes**
+3. **xxx**
 
 A través de un dos `<input>` (de tipo `radio` y de tipo `select`) se realiza un filtrado en la búsqueda realizada, pudiendo filtrar por uno o por los dos conceptos: GENERO y ESTADO. 
 Una vez filtrados, se renderiza de nuevo y aparece en la interfaz los personajes que cumplen esos requisitos. 
 
-4. **Utilizar React Router**
+4. **xxx**
 
 Al hacer click sobre alguna de las tarjetas se pinta la tarjeta clicada a pantalla completa con el detalle de cada personaje. 
 En los detalles aparece la siguiente información: imagen, nombre, especie, planeta de origen, género,  número de episodios en los que aparece el personaje, listado de episodios, y si está vivo o muerto.
