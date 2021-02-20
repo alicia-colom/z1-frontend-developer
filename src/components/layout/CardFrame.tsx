@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../stylesheets/layout/CardFrame.scss';
 import CardIdDefault from '../../images/ID_bg.svg';
 
@@ -29,14 +30,17 @@ const CardFrame = (props: Props) => {
 					}}
 					title="ID card picture"
 				>
-					{props.outcome && photoApproved ? null : (
-						<button type="submit" className="card-frame__btn">
-							{!props.outcome || !props.photo
-								? 'Take picture'
-								: 'Retake picture'}
-						</button>
+					{props.outcome && props.photo && photoApproved ? null : (
+						<Link to="/cam-view">
+							<button type="submit" className="card-frame__btn">
+								{!props.outcome || !props.photo
+									? 'Take picture'
+									: 'Retake picture'}
+							</button>
+						</Link>
 					)}
 				</div>
+
 				{props.outcome && props.photo ? (
 					<div
 						className={

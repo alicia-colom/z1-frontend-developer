@@ -1,0 +1,50 @@
+@import '../core/variables';
+
+.cam-view {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+		url(../../images/chip_bg.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	// &:before {
+	// 	background-color: rgba($color: #000000, $alpha: 1);
+	// }
+
+	&__info {
+		height: 100%;
+		margin-top: 100px;
+
+		text-align: center;
+		color: $colorFontSecondary;
+
+		&--title {
+			font-family: $fontMain;
+			font-size: $fontSizeTitle;
+			font-weight: 700;
+		}
+		&--text {
+			padding: 16px 0 56px 0;
+
+			font-family: $fontMain;
+			font-size: $fontSizeText;
+			font-weight: 400;
+		}
+	}
+
+	&__link {
+		position: relative;
+		bottom: 48px;
+
+		font-family: $fontMain;
+		font-size: $fontSizeText;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $colorFontSecondary;
+	}
+}
