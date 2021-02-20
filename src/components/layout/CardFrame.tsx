@@ -25,7 +25,31 @@ const CardFrame = () => {
 
 	// FUNCTIONS
 	const handleTakePicture = () => {
-		console.log('dentro de onclick');
+		<CamView photo={photo} outcome={outcome} isApproved={isApproved} />;
+
+		console.log('Poner un timeout');
+		console.log('Accionar la cámara');
+
+		// Setear estado-photo con la foto capturada
+		setPhoto('respuesta de la cámara');
+
+		// connectToApi(photo);
+
+		connectToApi(photo)
+			.then((result) => {
+				setOutcome(result.summary.outcome);
+
+				console.log(result);
+				console.log(result.summary.outcome);
+				console.log(outcome);
+			})
+			.then(() => {
+				setIsApproved(outcome === 'Approved');
+			})
+
+			.then(() => {
+				console.log(outcome, isApproved);
+			});
 	};
 
 	return (
