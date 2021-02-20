@@ -1,0 +1,83 @@
+@import '../core/variables';
+
+.card-frame {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	&__photo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 260px;
+		height: 160px;
+		border-radius: 12px;
+		box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.15);
+		background: no-repeat center url(../../images/ID_bg.svg);
+		// TODO: ¿La cámara ajusta el tamaño de la imagen capturada?
+		// TODO: Sino, poniendo "center/100%" la imagen se ajusta al contenedor,
+		// TODO: Pero esto no me vale para el tamaño de la CardIdDefault.
+	}
+	.border-accepted {
+		border: 2px solid $colorAccepted;
+	}
+	.border-rejected {
+		border: 2px solid $colorRejected;
+	}
+
+	&__btn {
+		width: 160px;
+		height: 48px;
+		border-radius: 24px;
+		border: none;
+		outline: none;
+		background-color: $colorPrimary;
+		box-shadow: 0 10px 20px -5px rgba(47, 0, 121, 0.3);
+
+		color: $colorFontSecondary;
+		font-size: $fontSizeText;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: $colorPrimaryLighter;
+			cursor: pointer;
+		}
+		&:active {
+			background-color: $colorPrimary;
+		}
+	}
+
+	&__msg {
+		width: 105px;
+		height: 30px;
+		border-radius: 4px;
+
+		position: relative;
+		bottom: 15px;
+		right: 24px;
+
+		color: $colorFontSecondary;
+		font-size: $fontSizeSmall;
+		font-weight: 700;
+
+		&--text {
+			padding-top: 9px;
+			display: flex;
+			justify-content: space-evenly;
+			align-content: center;
+			text-align: center;
+
+			text-transform: uppercase;
+			letter-spacing: 0.75px;
+		}
+	}
+	.msg-accepted {
+		background-color: $colorAccepted;
+	}
+	.msg-rejected {
+		background-color: $colorRejected;
+	}
+}

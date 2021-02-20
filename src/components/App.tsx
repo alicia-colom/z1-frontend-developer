@@ -6,18 +6,11 @@ import CamView from './CamView';
 
 function App() {
 	return (
-		<>
-			{/* <div>Hello world</div> */}
-			{/* <MainView />
-			<CamView /> */}
-
-			<Switch>
-				<Route exact path="/" component={MainView} />
-				<Route exact path="/cam-view" component={CamView} />
-			</Switch>
-		</>
+		<Switch>
+			<Route exact path="/" component={MainView} />
+			<Route exact path="/cam-view" component={CamView} />
+		</Switch>
 	);
 }
-// TODO:hacer router con MainView y CamView
 
 export default App;

@@ -1,0 +1,30 @@
+@import '../core/variables';
+
+.main-view {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__info {
+		max-width: 315px;
+		height: 100%;
+		margin-top: 32px;
+
+		text-align: center;
+		color: $colorFontPrimary;
+
+		&--title {
+			font-family: $fontMain;
+			font-size: $fontSizeTitle;
+			font-weight: 700;
+		}
+
+		&--text {
+			padding: 16px 0 27px 0;
+
+			font-family: $fontMain;
+			font-size: $fontSizeText;
+			font-weight: 400;
+		}
+	}
+}

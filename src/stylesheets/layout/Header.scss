@@ -1,0 +1,24 @@
+@import '../core/variables';
+
+.header {
+	width: 100vw;
+	height: 60px;
+	border-bottom: 1px solid $colorPrimaryOpacity;
+
+	display: flex;
+	align-items: center;
+
+	&__title {
+		padding-left: 20px;
+
+		color: $colorPrimary;
+		font-family: $fontMain;
+		font-size: $fontSizeTitle;
+		font-weight: 700;
+		font-style: italic;
+
+		:first-child {
+			text-transform: uppercase;
+		}
+	}
+}

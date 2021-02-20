@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/CamView.scss';
+import '../stylesheets/layout/CamView.scss';
 
 const CamVIew = () => {
 	return <div>Camera view scene</div>;
