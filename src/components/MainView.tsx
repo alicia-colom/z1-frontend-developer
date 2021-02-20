@@ -4,9 +4,6 @@ import CardFrame from './layout/CardFrame';
 import '../stylesheets/layout/MainView.scss';
 
 const MainView = () => {
-	const photo: string = '';
-	const outcome: string = 'Approved';
-
 	return (
 		<div className="main-view">
 			<Header />
@@ -19,7 +16,7 @@ const MainView = () => {
 				</p>
 			</section>
 
-			<CardFrame photo={photo} outcome={outcome} />
+			<CardFrame />
 		</div>
 	);
 };

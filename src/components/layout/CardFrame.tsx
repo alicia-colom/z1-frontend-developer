@@ -1,58 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import CamView from '../CamView';
+
+import { connectToApi } from '../../services/Api';
 import '../../stylesheets/layout/CardFrame.scss';
 import CardIdDefault from '../../images/ID_bg.svg';
 
-interface Props {
-	photo: string;
-	outcome: string;
-}
+const CardFrame = () => {
+	// TODO: Borrar cuando fetch implementado
+	const cardFake: string =
+		'https://www.ocu.org/-/media/ocu/images/home/dinero/tarjetas/tarjeta_aqua_1600x900.jpg?rev=9dccc2d8-2b35-4405-bcf8-f019e635d302&mw=660&hash=46412196F3F1289D8F64934517C15C14';
 
-const CardFrame = (props: Props) => {
-	const photoApproved: boolean = props.outcome === 'Approved';
+	// INITIAL VALUES
+	const initialPhoto: string = '../../images/ID_bg.svg';
+	const initialOutcome: string = 'ssss';
+
+	// STATES
+	const [photo, setPhoto] = useState(cardFake);
+	const [outcome, setOutcome] = useState(initialOutcome);
+	const [isApproved, setIsApproved] = useState(false);
+
+	// const isApproved: boolean = outcome === 'Approved';
+
+	// FUNCTIONS
+	const handleTakePicture = () => {
+		console.log('dentro de onclick');
+	};
 
 	return (
 		<>
 			<section className="card-frame">
 				<div
 					className={
-						!props.outcome || !props.photo
+						!outcome || !photo
 							? 'card-frame__photo'
-							: photoApproved
+							: isApproved
 							? 'card-frame__photo border-accepted'
 							: 'card-frame__photo border-rejected'
 					}
 					style={{
 						backgroundImage:
-							'url(' +
-							(!props.outcome || !props.photo ? CardIdDefault : props.photo) +
-							')',
+							'url(' + (!outcome || !photo ? CardIdDefault : photo) + ')',
 					}}
 					title="ID card picture"
 				>
-					{props.outcome && props.photo && photoApproved ? null : (
+					{outcome && photo && isApproved ? null : (
 						<Link to="/cam-view">
-							<button type="submit" className="card-frame__btn">
-								{!props.outcome || !props.photo
-									? 'Take picture'
-									: 'Retake picture'}
+							<button
+								type="submit"
+								className="card-frame__btn"
+								onClick={handleTakePicture}
+							>
+								{!outcome || !photo ? 'Take picture' : 'Retake picture'}
 							</button>
 						</Link>
 					)}
 				</div>
 
-				{props.outcome && props.photo ? (
+				{outcome && photo ? (
 					<div
 						className={
 							'card-frame__msg ' +
-							(photoApproved ? 'msg-accepted' : 'msg-rejected')
+							(isApproved ? 'msg-accepted' : 'msg-rejected')
 						}
 					>
 						<p className="card-frame__msg--text">
 							<i
-								className={'fas ' + (photoApproved ? 'fa-check' : 'fa-times')}
+								className={'fas ' + (isApproved ? 'fa-check' : 'fa-times')}
 							></i>
-							{photoApproved ? 'Accepted' : 'Rejected'}
+							{isApproved ? 'Accepted' : 'Rejected'}
 						</p>
 					</div>
 				) : null}

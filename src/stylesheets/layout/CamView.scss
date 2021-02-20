@@ -8,13 +8,15 @@
 	align-items: center;
 	justify-content: center;
 
-	background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+	background-image: 
+	linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.6) 30%,
+			rgba(0, 0, 0, 0.3) 85%,
+		),
 		url(../../images/chip_bg.jpg);
 	background-size: cover;
 	background-attachment: fixed;
-	// &:before {
-	// 	background-color: rgba($color: #000000, $alpha: 1);
-	// }
 
 	&__info {
 		height: 100%;

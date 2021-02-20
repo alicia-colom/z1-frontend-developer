@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import CamCapture from './layout/CamCapture';
 import '../stylesheets/layout/CamView.scss';
 
-const CamView = () => {
+interface Props {
+	photo: string;
+	outcome: string;
+	isApproved: boolean;
+}
+
+const CamView = (props: Props) => {
 	return (
 		<div className="cam-view">
 			<section className="cam-view__info">
@@ -13,7 +19,12 @@ const CamView = () => {
 					<br />
 					The picture will be taken automatically.
 				</p>
-				<CamCapture />
+
+				<CamCapture
+					photo={props.photo}
+					outcome={props.outcome}
+					isApproved={props.isApproved}
+				/>
 			</section>
 
 			<Link to="/">
@@ -21,6 +32,7 @@ const CamView = () => {
 					Cancel
 				</a>
 			</Link>
+			{/* TODO: CANCEL debe parar el fetch (a parte de enlazar con la home)  */}
 		</div>
 	);
 };

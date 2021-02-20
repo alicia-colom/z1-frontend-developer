@@ -5,9 +5,5 @@ export const connectToApi = (userData: string) => {
 		method: 'POST',
 		body: JSON.stringify(userData),
 		headers: { 'content-type': 'application/json' },
-	})
-		.then((resp) => resp.json())
-		.then((result) => {
-			return result;
-		});
+	}).then((resp) => resp.json());
 };
