@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-import '../../stylesheets/layout/CardFrame.scss';
 import CardIdDefault from '../../images/ID_bg.svg';
+import '../../stylesheets/layout/CardFrame.scss';
 
 const CardFrame = (props: StateDataProps) => {
 	return (
