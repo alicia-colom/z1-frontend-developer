@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './layout/Home';
 import CamView from './layout/CamView';
+import IdBgImage from '../images/ID_bg.svg';
 import '../stylesheets/App.scss';
 
 function App() {
 	// INITIAL VALUES
-	const initialPhoto: string = '../../images/ID_bg.svg';
+	const initialPhoto: string = IdBgImage;
 	const initialOutcome: string = '';
 
 	// STATES
@@ -23,7 +24,6 @@ function App() {
 		const newValue: boolean = result === 'Approved';
 		setIsApproved(newValue);
 	};
-	// TODO: función manejadora para setear el state PHOTO
 	const handlePhotoValue = (newCapture: string) => {
 		setPhoto(newCapture);
 	};
