@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './layout/Header';
-import CardFrame from './layout/CardFrame';
-import '../stylesheets/layout/MainView.scss';
+import Header from './Header';
+import CardFrame from './CardFrame';
+import '../../stylesheets/layout/Home.scss';
 
-const MainView = () => {
+const Home = (props: StateDataProps) => {
 	return (
 		<div className="main-view">
 			<Header />
@@ -16,9 +16,13 @@ const MainView = () => {
 				</p>
 			</section>
 
-			<CardFrame />
+			<CardFrame
+				photo={props.photo}
+				outcome={props.outcome}
+				isApproved={props.isApproved}
+			/>
 		</div>
 	);
 };
 
-export default MainView;
+export default Home;

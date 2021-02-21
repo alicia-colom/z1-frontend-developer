@@ -106,7 +106,7 @@ Enrutamiento dinámico de las dos vistas de la navegación de la app:
 
 | Vista | Componente | URL |
 | -- | -- | -- |
-| Pantalla principal | MainView | `/` |
+| Pantalla principal | Home | `/` |
 | Vista de cámara | CamView | `/cam-view` |
 
 3\. **xxx**

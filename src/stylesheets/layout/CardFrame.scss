@@ -36,9 +36,14 @@
 		background-color: $colorPrimary;
 		box-shadow: 0 10px 20px -5px rgba(47, 0, 121, 0.3);
 
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
 		color: $colorFontSecondary;
 		font-size: $fontSizeText;
 		font-weight: 700;
+		line-height: 24px;
 		text-transform: uppercase;
 
 		&:hover {
