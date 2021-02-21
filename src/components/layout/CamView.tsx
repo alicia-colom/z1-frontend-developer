@@ -8,8 +8,11 @@ const CamView = (props: HandleStateProps) => {
 	const [counter, setCounter] = useState<number>(1);
 
 	const handleCancel = () => {
+		// TODO: comprobar si este cleartimeout funciona para parar la ejecución
+		// TODO: y revisar tb que resetee -de algún modo- el useeffect
+
 		clearTimeout();
-		props.handleOutcomeValue('cancel');
+		props.handleOutcomeValue('x');
 		props.handleIsApprovedValue(false);
 		<Redirect push to={'/'} />;
 	};
@@ -20,6 +23,7 @@ const CamView = (props: HandleStateProps) => {
 		height: { max: 1080 },
 		aspectRatio: 1.638,
 	};
+
 	const webcamRef = React.useRef(null);
 
 	useEffect(() => {
@@ -42,7 +46,7 @@ const CamView = (props: HandleStateProps) => {
 					);
 				});
 			}
-		}, 12000);
+		}, 1200);
 
 		return () => clearTimeout(timeout);
 	}, [counter, props]);
@@ -51,7 +55,7 @@ const CamView = (props: HandleStateProps) => {
 	if (props.isApproved) {
 		// setTimeout(() => {
 		return <Redirect push to={'/'} />;
-		// }, 1200);
+		// }, 1300);
 		// return () => clearTimeout();
 	}
 
@@ -102,9 +106,7 @@ const CamView = (props: HandleStateProps) => {
 				>
 					Cancel
 				</Link>
-			
 			</section>
-
 		</div>
 	);
 };
