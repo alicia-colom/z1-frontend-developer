@@ -1,0 +1,30 @@
+{
+	"short_name": "BankClient · ID Scan",
+	"name": "BankClient webapp for scan ID card",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "50x50",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "chip_bg.jpg",
+			"type": "image/jpg",
+			"sizes": "1918x1280"
+		},
+		{
+			"src": "ID_bg.svg",
+			"type": "image/svg",
+			"sizes": "217x124"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#2f0079",
+	"background_color": "#ffffff",
+	"permissions": {
+		"video-capture": {
+			"description": "Required to capture video using getUserMedia()"
+		}
+	}
+}
