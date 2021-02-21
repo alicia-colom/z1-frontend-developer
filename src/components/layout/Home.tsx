@@ -3,7 +3,7 @@ import Header from './Header';
 import CardFrame from './CardFrame';
 import '../../stylesheets/layout/Home.scss';
 
-const Home = (props: StateDataProps) => {
+const Home = (props: HandleStateProps) => {
 	return (
 		<div className="main-view">
 			<Header />
@@ -19,6 +19,9 @@ const Home = (props: StateDataProps) => {
 				photo={props.photo}
 				outcome={props.outcome}
 				isApproved={props.isApproved}
+				handleOutcomeValue={props.handleOutcomeValue}
+				handleIsApprovedValue={props.handleIsApprovedValue}
+				handlePhotoValue={props.handlePhotoValue}
 			/>
 		</div>
 	);

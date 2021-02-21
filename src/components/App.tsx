@@ -31,7 +31,14 @@ function App() {
 	return (
 		<Switch>
 			<Route exact path="/">
-				<Home photo={photo} outcome={outcome} isApproved={isApproved} />
+				<Home
+					photo={photo}
+					outcome={outcome}
+					isApproved={isApproved}
+					handleOutcomeValue={handleOutcomeValue}
+					handleIsApprovedValue={handleIsApprovedValue}
+					handlePhotoValue={handlePhotoValue}
+				/>
 			</Route>
 			<Route exact path="/cam-view">
 				<CamView

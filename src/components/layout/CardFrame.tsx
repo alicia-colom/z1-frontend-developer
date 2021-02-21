@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import CardIdDefault from '../../images/ID_bg.svg';
 import '../../stylesheets/layout/CardFrame.scss';
 
-const CardFrame = (props: StateDataProps) => {
+const CardFrame = (props: HandleStateProps) => {
+	const handleReset = () => {
+		props.handleOutcomeValue('');
+		props.handleIsApprovedValue(false);
+		props.handlePhotoValue('');
+	};
+
 	return (
 		<>
 			<section className="card-frame">
@@ -24,10 +30,11 @@ const CardFrame = (props: StateDataProps) => {
 					title="ID card picture"
 				>
 					{props.outcome && props.photo && props.isApproved ? null : (
-						// TODO: Este link tiene que lanzar SIEMPRE a la CamView con la bombilla
-						// TODO: pero no lo hace en todos los casos...¿? Revisar
-
-						<Link to="/cam-view" className="card-frame__btn">
+						<Link
+							to="/cam-view"
+							className="card-frame__btn"
+							onClick={handleReset}
+						>
 							{!props.outcome || !props.photo
 								? 'Take picture'
 								: 'Retake picture'}

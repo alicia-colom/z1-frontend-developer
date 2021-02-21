@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
 import Webcam from 'react-webcam';
 import { connectToApi } from '../../services/Api';
@@ -8,11 +8,8 @@ const CamView = (props: HandleStateProps) => {
 	const [counter, setCounter] = useState<number>(1);
 
 	const handleCancel = () => {
-		// TODO: comprobar si este cleartimeout funciona para parar la ejecución
-		// TODO: y revisar tb que resetee -de algún modo- el useeffect
-
 		clearTimeout();
-		props.handleOutcomeValue('x');
+		props.handleOutcomeValue('Cancel');
 		props.handleIsApprovedValue(false);
 		<Redirect push to={'/'} />;
 	};
@@ -24,7 +21,7 @@ const CamView = (props: HandleStateProps) => {
 		aspectRatio: 1.638,
 	};
 
-	const webcamRef = React.useRef(null);
+	const webcamRef = useRef(null);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -46,7 +43,7 @@ const CamView = (props: HandleStateProps) => {
 					);
 				});
 			}
-		}, 2000);
+		}, 1500);
 
 		return () => clearTimeout(timeout);
 	}, [counter, props]);
@@ -54,11 +51,10 @@ const CamView = (props: HandleStateProps) => {
 	const history = useHistory();
 
 	if (props.isApproved) {
-		const delayAndGo = () => {
-			setTimeout(() => history.push('/'), 2000);
+		const delay = () => {
+			setTimeout(() => history.push('/'), 1500);
 		};
-
-		delayAndGo();
+		delay();
 	}
 
 	return (
