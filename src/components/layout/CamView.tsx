@@ -5,11 +5,6 @@ import CamCapture from './CamCapture';
 import { connectToApi } from '../../services/Api';
 import '../../stylesheets/layout/CamView.scss';
 
-// interface VideoConstraints {
-// 	audio: boolean;
-// 	video: { width: { max: number }; height: { max: number } };
-// }
-
 const CamView = (props: HandleStateProps) => {
 	const [counter, setCounter] = useState<number>(1);
 
@@ -29,8 +24,9 @@ const CamView = (props: HandleStateProps) => {
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			if (!props.isApproved) {
-
 				const photoTaken = webcamRef.current.getScreenshot();
+
+				props.handlePhotoValue(photoTaken);
 
 				connectToApi(photoTaken).then((result) => {
 					props.handleOutcomeValue(result.summary.outcome);
@@ -44,9 +40,8 @@ const CamView = (props: HandleStateProps) => {
 						result.summary.outcome
 					);
 				});
-				props.handlePhotoValue(photoTaken);
 			}
-		}, 1200);
+		}, 60000);
 
 		return () => clearTimeout(timeout);
 	}, [counter, props]);
@@ -68,30 +63,53 @@ const CamView = (props: HandleStateProps) => {
 					<br />
 					The picture will be taken automatically.
 				</p>
-
-				<Webcam
-					audio={false}
-					width={289}
-					// height={179}
-					ref={webcamRef}
-					screenshotFormat="image/jpeg"
-					videoConstraints={videoConstraints}
-				/>
-
-				<CamCapture
-					photo={props.photo}
-					outcome={props.outcome}
-					isApproved={props.isApproved}
-				/>
-
-
-				
 			</section>
+
+			<section className="cam-view__capture">
+				<div
+					className={
+						!props.outcome || !props.photo
+							? 'cam-view__capture--image'
+							: props.isApproved
+							? 'cam-view__capture--image border-accepted'
+							: 'cam-view__capture--image border-rejected'
+					}
+				>
+					<Webcam
+						audio={false}
+						width={289}
+						// height={179}
+						ref={webcamRef}
+						screenshotFormat="image/jpeg"
+						videoConstraints={videoConstraints}
+					/>
+				</div>
+
+				{/* {props.photo && props.outcome && !props.isApproved ? null : ( */}
+					<div className="cam-view__capture--msg">
+						<p className="cam-view__capture--msg text">
+							<i
+								className={
+									'cam-view__capture--msg icon far ' +
+									(props.isApproved ? 'fa-check-circle' : 'fa-lightbulb')
+								}
+							></i>
+							{props.isApproved ? 'Picture taken!' : 'Room lighting is too low'}
+						</p>
+					</div>
+				{/* )} */}
+			</section>
+
+			{/* <CamCapture
+				photo={props.photo}
+				outcome={props.outcome}
+				isApproved={props.isApproved}
+			/> */}
 
 			<Link
 				to="/"
 				title="Back to home"
-				className="cam-view__link"
+				className="cam-view__cancel-btn"
 				onClick={handleCancel}
 			>
 				Cancel

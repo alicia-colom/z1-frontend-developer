@@ -6,20 +6,19 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	// justify-content: center;
 
-	background-image: 
-	linear-gradient(
+	background-image: linear-gradient(
 			to bottom,
 			rgba(0, 0, 0, 0.6) 30%,
-			rgba(0, 0, 0, 0.3) 85%,
+			rgba(0, 0, 0, 0.3) 85%
 		),
 		url(../../images/chip_bg.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 
 	&__info {
-		height: 100%;
+		// height: 100%;
 		margin-top: 100px;
 
 		text-align: center;
@@ -39,7 +38,39 @@
 		}
 	}
 
-	&__link {
+	&__capture {
+		&--image {
+			width: 289px;
+			height: 179px;
+			border-radius: 12px;
+
+			background-color: royalblue;
+		}
+		.border-accepted {
+			border: 2px solid $colorAccepted;
+		}
+		.border-rejected {
+			border: 2px solid $colorRejected;
+		}
+
+		&--msg {
+			.text {
+				font-size: $fontSizeText;
+				color: $colorFontSecondary;
+			}
+			.icon {
+				margin: 23px 8px 0 0;
+			}
+			.fa-check-circle {
+				color: $colorAccepted;
+			}
+			.fa-lightbulb {
+				color: $colorLightWarning;
+			}
+		}
+	}
+
+	&__cancel-btn {
 		position: relative;
 		bottom: 48px;
 
