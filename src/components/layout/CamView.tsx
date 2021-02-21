@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Webcam from 'react-webcam';
-import CamCapture from './CamCapture';
 import { connectToApi } from '../../services/Api';
 import '../../stylesheets/layout/CamView.scss';
 
@@ -9,6 +8,7 @@ const CamView = (props: HandleStateProps) => {
 	const [counter, setCounter] = useState<number>(1);
 
 	const handleCancel = () => {
+		clearTimeout();
 		props.handleOutcomeValue('cancel');
 		props.handleIsApprovedValue(false);
 		<Redirect push to={'/'} />;
@@ -18,6 +18,7 @@ const CamView = (props: HandleStateProps) => {
 		audio: false,
 		width: { max: 1920 },
 		height: { max: 1080 },
+		aspectRatio: 1.638,
 	};
 	const webcamRef = React.useRef(null);
 
@@ -41,7 +42,7 @@ const CamView = (props: HandleStateProps) => {
 					);
 				});
 			}
-		}, 60000);
+		}, 12000);
 
 		return () => clearTimeout(timeout);
 	}, [counter, props]);
@@ -66,7 +67,11 @@ const CamView = (props: HandleStateProps) => {
 			</section>
 
 			<section className="cam-view__capture">
-				<div
+				<Webcam
+					audio={false}
+					ref={webcamRef}
+					screenshotFormat="image/jpeg"
+					videoConstraints={videoConstraints}
 					className={
 						!props.outcome || !props.photo
 							? 'cam-view__capture--image'
@@ -74,18 +79,8 @@ const CamView = (props: HandleStateProps) => {
 							? 'cam-view__capture--image border-accepted'
 							: 'cam-view__capture--image border-rejected'
 					}
-				>
-					<Webcam
-						audio={false}
-						width={289}
-						// height={179}
-						ref={webcamRef}
-						screenshotFormat="image/jpeg"
-						videoConstraints={videoConstraints}
-					/>
-				</div>
-
-				{/* {props.photo && props.outcome && !props.isApproved ? null : ( */}
+				/>
+				{props.photo && props.outcome && !props.isApproved ? null : (
 					<div className="cam-view__capture--msg">
 						<p className="cam-view__capture--msg text">
 							<i
@@ -97,23 +92,19 @@ const CamView = (props: HandleStateProps) => {
 							{props.isApproved ? 'Picture taken!' : 'Room lighting is too low'}
 						</p>
 					</div>
-				{/* )} */}
+				)}
+
+				<Link
+					to="/"
+					title="Back to home"
+					className="cam-view__capture--cancel-btn"
+					onClick={handleCancel}
+				>
+					Cancel
+				</Link>
+			
 			</section>
 
-			{/* <CamCapture
-				photo={props.photo}
-				outcome={props.outcome}
-				isApproved={props.isApproved}
-			/> */}
-
-			<Link
-				to="/"
-				title="Back to home"
-				className="cam-view__cancel-btn"
-				onClick={handleCancel}
-			>
-				Cancel
-			</Link>
 		</div>
 	);
 };

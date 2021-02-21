@@ -6,45 +6,43 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	// justify-content: center;
 
+	color: $colorFontSecondary;
+	font-family: $fontMain;
+
+	background-size: cover;
+	background-attachment: fixed;
 	background-image: linear-gradient(
 			to bottom,
 			rgba(0, 0, 0, 0.6) 30%,
 			rgba(0, 0, 0, 0.3) 85%
 		),
 		url(../../images/chip_bg.jpg);
-	background-size: cover;
-	background-attachment: fixed;
 
 	&__info {
-		// height: 100%;
 		margin-top: 100px;
-
 		text-align: center;
-		color: $colorFontSecondary;
 
 		&--title {
-			font-family: $fontMain;
 			font-size: $fontSizeTitle;
 			font-weight: 700;
 		}
 		&--text {
 			padding: 16px 0 56px 0;
-
-			font-family: $fontMain;
 			font-size: $fontSizeText;
 			font-weight: 400;
 		}
 	}
 
 	&__capture {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
 		&--image {
 			width: 289px;
 			height: 179px;
 			border-radius: 12px;
-
-			background-color: royalblue;
 		}
 		.border-accepted {
 			border: 2px solid $colorAccepted;
@@ -56,7 +54,6 @@
 		&--msg {
 			.text {
 				font-size: $fontSizeText;
-				color: $colorFontSecondary;
 			}
 			.icon {
 				margin: 23px 8px 0 0;
@@ -68,16 +65,17 @@
 				color: $colorLightWarning;
 			}
 		}
-	}
 
-	&__cancel-btn {
-		position: relative;
-		bottom: 48px;
+		&--cancel-btn {
+			justify-self: baseline;
+			position: absolute;
+			bottom: 48px;
 
-		font-family: $fontMain;
-		font-size: $fontSizeText;
-		font-weight: 700;
-		text-transform: uppercase;
-		color: $colorFontSecondary;
+			font-size: $fontSizeText;
+			font-weight: 700;
+			color: $colorFontSecondary;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
 	}
 }
