@@ -7,7 +7,6 @@ const Home = (props: StateDataProps) => {
 	return (
 		<div className="main-view">
 			<Header />
-
 			<section className="main-view__info">
 				<h2 className="main-view__info--title">Scan your ID</h2>
 				<p className="main-view__info--text">

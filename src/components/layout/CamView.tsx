@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Webcam from 'react-webcam';
-import CamCapture from './CamCapture';
+import CamCapture from './CamCapture.tsx';
 import { connectToApi } from '../../services/Api';
 import '../../stylesheets/layout/CamView.scss';
+
+// interface VideoConstraints {
+// 	audio: boolean;
+// 	video: { width: { max: number }; height: { max: number } };
+// }
 
 const CamView = (props: HandleStateProps) => {
 	const [counter, setCounter] = useState<number>(1);
@@ -14,14 +19,20 @@ const CamView = (props: HandleStateProps) => {
 		<Redirect push to={'/'} />;
 	};
 
-	// TODO:  1) Desde el time-out...
-	// TODO:  2) ...Accionar la camara 1 vez
-	// TODO:  3) Guardar la foto tomada en el estado-photo
+	const videoConstraints = {
+		audio: false,
+		width: { max: 1920 },
+		height: { max: 1080 },
+	};
+	const webcamRef = React.useRef(null);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			if (!props.isApproved) {
-				connectToApi(props.photo).then((result) => {
+
+				const photoTaken = webcamRef.current.getScreenshot();
+
+				connectToApi(photoTaken).then((result) => {
 					props.handleOutcomeValue(result.summary.outcome);
 					props.handleIsApprovedValue(result.summary.outcome);
 
@@ -33,6 +44,7 @@ const CamView = (props: HandleStateProps) => {
 						result.summary.outcome
 					);
 				});
+				props.handlePhotoValue(photoTaken);
 			}
 		}, 1200);
 
@@ -57,11 +69,23 @@ const CamView = (props: HandleStateProps) => {
 					The picture will be taken automatically.
 				</p>
 
+				<Webcam
+					audio={false}
+					width={289}
+					// height={179}
+					ref={webcamRef}
+					screenshotFormat="image/jpeg"
+					videoConstraints={videoConstraints}
+				/>
+
 				<CamCapture
 					photo={props.photo}
 					outcome={props.outcome}
 					isApproved={props.isApproved}
 				/>
+
+
+				
 			</section>
 
 			<Link
