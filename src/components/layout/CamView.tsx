@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import Webcam from 'react-webcam';
 import { connectToApi } from '../../services/Api';
 import '../../stylesheets/layout/CamView.scss';
@@ -46,17 +46,19 @@ const CamView = (props: HandleStateProps) => {
 					);
 				});
 			}
-		}, 1200);
+		}, 2000);
 
 		return () => clearTimeout(timeout);
 	}, [counter, props]);
 
-	// TODO: Revisar si es posible timeout antes del renderizado de CamView
+	const history = useHistory();
+
 	if (props.isApproved) {
-		// setTimeout(() => {
-		return <Redirect push to={'/'} />;
-		// }, 1300);
-		// return () => clearTimeout();
+		const delayAndGo = () => {
+			setTimeout(() => history.push('/'), 2000);
+		};
+
+		delayAndGo();
 	}
 
 	return (
