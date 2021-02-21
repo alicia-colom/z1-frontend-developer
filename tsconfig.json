@@ -8,6 +8,7 @@
 		"allowSyntheticDefaultImports": true,
 		"strict": true,
 		"strictNullChecks": false /* Enable strict null checks. */,
+		"alwaysStrict": false /* Parse in strict mode and emit "use strict" for each source file. */,
 		"forceConsistentCasingInFileNames": true,
 		"noFallthroughCasesInSwitch": true,
 		"module": "esnext",
