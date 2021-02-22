@@ -7,20 +7,14 @@
 ------------
 
 ## 🔎 **OBJETIVO**
-Se trata de una app desarrollada en **React**, la cual conecta con una **API REST** que analiza fotos de documentos de identidad, y sigue el diseño del prototipo dado en **InVision**.
+Se trata de una webapp consistente en un escaner de documentos de identidad.
 
-Desde el front se implementan los siguientes aspectos:
-- [ ] Accionar la cámara del dispositivo desde el que se accede a la app.
-- [ ] Tomar fotografía automáticamente al encajar en el encuadre dado.
-- [ ] Implementar botón *"Cancelar"* para volver a la pantalla principal.
-- [ ] Envío de la fotografía tomada a la API.
-- [ ] Recepción de la respuesta de la API tras analizar si es válida o no.
-- [ ] Gestión de las diferentes respuestas posibles.
-- [ ] Mostrar visualmente al usuario de la app si la fotografía es válida o no.
-- [ ] Redirigir a pantalla principal tras respuesta de la API.
-- [ ] Registrar la última fotografía tomada y:
-- [ ]  si es válida: mostrar imagen y mensaje de *"aceptada"*
-- [ ]  si no es válida: mostrar imagen, mensaje de *"rechazada"*, y botón para tomar nueva fotografía
+El funcionamiento es el siguiente: la app captura una fotografía usando la cámara del usuario, y la envía conectando con una **API REST**.
+La API devuelve una respuesta, que mostraremos al usuario por pantalla:
+Si la respuesta es de aceptación, finaliza la ejecución.
+Si por el contrario, es rechazada, el usuario podrá volver a inicializar el proceso.
+
+Todo esto, siguiendo el diseño del prototipo dado en **InVision** y desarrollado en **React** usando **TypeScript**
 
 ------------
 
@@ -31,10 +25,11 @@ Desde el front se implementan los siguientes aspectos:
 - JSX
 - HTML5 + CSS3
 - Sass
+- Jest + Enzyme
+- React-Webcam
 - Git + GitHub
 - npm
 - API REST
-- expo-camera
 
 ------------
 
@@ -44,34 +39,41 @@ Desde el front se implementan los siguientes aspectos:
 src
  ├─ public
  |  ├─ index.hmtl
- |  └─ favicon.ico
+ |  ├─ favicon.ico
+ |  └─ ...
  |
  ├─ components
- |  ├─ App.js _______ comp. principal
- |  ├─ Landing.js _______ comp. de aterrizaje a la web
- |  ├─ CharacterList.js _______ listado de personajes e input de búsqueda
- |  ├─ CharacterCard.js _______ tarjeta de personaje que se renderiza en CharacterList.js
- |  ├─ CharacterDetail.js _______ comp. con información general del personaje
- |  ├─ Header.js _______ cabecera con logo y link a landing
- |  ├─ Footer.js _______ pie de página con datos de autoría
- |  ├─ Error.js _______ comp. de personaje inexistente
- |  ├─ NotResults.js _______ comp. de búsqueda fallida
- |  └─ Filters.js _______ comp. de trabajo para filtrados
+ |  ├─ App.tsx
+ |  └─ layout
+ |     ├─ Header.tsx
+ |     ├─ Home.tsx
+ |     ├─ CardFrame.tsx
+ |     └─ CamView.tsx
+ |
+ ├─ services
+ |  └─ Api.ts
+ |
+ ├─ stylesheets
+ |  ├─ App.scss
+ |  ├─ core
+ |  |  ├─ _reset.scss_
+ |  |  └─ _variables.scss_
+ |  └─ layout
+ |     ├─ Header.scss
+ |     ├─ Home.scss
+ |     ├─ CardFrame.scss
+ |     └─ CamView.scss
+ |
+ ├─ tests
+ |  ├─ Home.test.tsx
+ |  ├─ CardFrame.test.tsx
+ |  ├─ CamView.test.tsx
+ |  └─ ...
  |
  ├─ images
  |  └─ ...
  |
- ├─ services
- |  └─ api.js _______ solicitud fetch a API
- |
- ├─ stylesheets
- |  ├─ CharacterList.scss
- |  ├─ CharacterCard.scss
- |  ├─ CharacterDetail.scss
- |  ├─ Error.scss
- |  └─ ...
- |
- ├─ index.js
+ ├─ index.tsx
  └─ index.scss
 ```
 
@@ -92,7 +94,7 @@ Igualmente, se mostrarán los errores y los warning del lint en la consola.
 Arranca el "test watcher" en modo interactivo
 Por defecto, se arrancan los tests relacionados con los archivos que hayan sufrido algún cambio desde el últimos commit.
 
-------------
+<!-- ------------
 
 ## 💻 **DESARROLLO**
 
@@ -140,7 +142,7 @@ En los detalles aparece la siguiente información: imagen, nombre, especie, plan
 
 ## 💡 Improvements
 
-- Mostrar un mensaje de error si se introduce una ruta inexistente en el navegador.
+- Mostrar un mensaje de error si se introduce una ruta inexistente en el navegador. -->
 
 ------------
 
@@ -148,4 +150,4 @@ En los detalles aparece la siguiente información: imagen, nombre, especie, plan
 
 Puedes navegar por la aplicación en modo usuario siguiendo el siguiente enlace:
 
-#### **http://beta.adalab.es/modulo-3-evaluacion-final-alicia-colom/#/**
+#### **https://alicia-colom.github.io/z1-frontend-developer/#/**
