@@ -16,9 +16,6 @@
 		border-radius: 12px;
 		box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.15);
 		background: no-repeat center url(../../images/ID_bg.svg);
-		// TODO: ¿La cámara ajusta el tamaño de la imagen capturada?
-		// TODO: Sino, poniendo "center/100%" la imagen se ajusta al contenedor,
-		// TODO: Pero esto no me vale para el tamaño de la CardIdDefault.
 	}
 	.border-accepted {
 		border: 2px solid $colorAccepted;
@@ -41,6 +38,7 @@
 		align-items: center;
 
 		color: $colorFontSecondary;
+		font-family: $fontMain;
 		font-size: $fontSizeText;
 		font-weight: 700;
 		line-height: 24px;
@@ -75,6 +73,7 @@
 			align-content: center;
 			text-align: center;
 
+			font-family: $fontMain;
 			text-transform: uppercase;
 			letter-spacing: 0.75px;
 		}
