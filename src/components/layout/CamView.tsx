@@ -43,7 +43,7 @@ const CamView = (props: HandleStateProps) => {
 					);
 				});
 			}
-		}, 1500);
+		}, 2000);
 
 		return () => clearTimeout(timeout);
 	}, [counter, props]);
@@ -52,7 +52,7 @@ const CamView = (props: HandleStateProps) => {
 
 	if (props.isApproved) {
 		const delay = () => {
-			setTimeout(() => history.push('/'), 1500);
+			setTimeout(() => history.push('/'), 2500);
 		};
 		delay();
 	}
