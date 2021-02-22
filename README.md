@@ -6,7 +6,7 @@
 
 ------------
 
-## 🔎 **OBJETIVO**
+## 🔎 **Objetivo**
 Se trata de una webapp consistente en un escaner de documentos de identidad.
 
 El funcionamiento es el siguiente: la app captura una fotografía usando la cámara del usuario, y la envía conectando con una **API REST**.
@@ -18,7 +18,7 @@ Todo esto, siguiendo el diseño del prototipo dado en **InVision** y desarrollad
 
 ------------
 
-## 🛠️ **STACK TECNOLÓGICO:**
+## 🛠️ **Stack Tecnológico:**
 
 | React | TypeScript | JSX | API REST |
 | -- | -- | -- | -- |
@@ -31,7 +31,7 @@ Todo esto, siguiendo el diseño del prototipo dado en **InVision** y desarrollad
 
 ------------
 
-## ⚙️ **SCRIPTS DISPONIBLES**
+## ⚙️ **Scripts Disponibles**
 
 
 #### `npm install` o `yarn install`
@@ -104,7 +104,7 @@ src
 
 ------------
 
-## 💻 **DESARROLLO**
+## 💻 **Desarrollo**
 
 <details>
 <summary>Desplegar para ver algunas notas sobre el desarrollo</summary>
@@ -132,11 +132,14 @@ Para realizar la funcionalidad de activación de la cámara del usuario y la cap
 
 ------------
 
-## 💡 Improvements
+## 💡 **Improvements**
 
-*Mejoras sugeridas para desarrollar a futuro en siguientes versiones:*
+<details>
+<summary>Desplegar para ver mejoras sugeridas para desarrollar a futuro en siguientes versiones</summary>
 
 - Actualizar la dependencia **`immer`** a la úlitma versión recomendada (`8.0.1`).
+
+- Implementar escucha de aceptación por parte del usuario de permisos de cámara, para activar la ejecución de captura de foto + llamada a la API.
 
 - Implementar mensaje de error si se introduce una ruta inexistente en el navegador.
 
@@ -145,9 +148,11 @@ Para realizar la funcionalidad de activación de la cámara del usuario y la cap
     - En el proceso de llamadas al servidor hasta recepción de *"Approved"*.
     - Durante la carga de la pantalla principal ***Home***, en el renderizado de la fotografía en el componente ***CardFrame***.
 
+</details>
+
 ------------
 
-## 🚀 RESULTADO
+## 🚀 **Resultado**
 
 Puedes navegar por la aplicación en modo usuario siguiendo el siguiente enlace:
 
