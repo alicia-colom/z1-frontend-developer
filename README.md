@@ -45,21 +45,21 @@ src
  |  └─ ...
  |
  ├─ components
- |  ├─ App.tsx
+ |  ├─ App.tsx _____________ Componente principal que gestiona el enrutamiento y los estados de la app
  |  └─ layout
  |     ├─ Header.tsx
- |     ├─ Home.tsx
- |     ├─ CardFrame.tsx
- |     └─ CamView.tsx
+ |     ├─ Home.tsx _________ Componente de vista principal de la app
+ |     ├─ CardFrame.tsx ____ Componente integrado en la vista principal
+ |     └─ CamView.tsx ______ Componente de vista secundaria: acción de cámara
  |
  ├─ services
- |  └─ Api.ts
+ |  └─ Api.ts ______________ Gestión de llamada a la API
  |
  ├─ stylesheets
  |  ├─ App.scss
  |  ├─ core
- |  |  ├─ _reset.scss_
- |  |  └─ _variables.scss_
+ |  |  ├─ _reset.scss ______ Reset de ciertos parámetros para reducir la inconsistencia entre navegadores
+ |  |  └─ _variables.scss __ Centralización de parámetros usados en los estilos
  |  └─ layout
  |     ├─ Header.scss
  |     ├─ Home.scss
@@ -87,7 +87,7 @@ src
 
 #### `npm install` o `yarn install`
 
-Antes de inicializar la aplicaión, hay que instalar las dependencias de las que hace uso, mediante una de estos comandos.
+Antes de inicializar la aplicación: instala las dependencias mediante uno de estos comandos.
 
 #### `npm start` o `yarn start`
 
@@ -99,18 +99,19 @@ Igualmente, se mostrarán los errores y los warning del lint en la consola.
 
 #### `npm test` o `yarn test`
 
-Arranca el "test watcher" en modo interactivo
+Arranca la suite de tests en modo interactivo.
 Por defecto, se arrancan los tests relacionados con los archivos que hayan sufrido algún cambio desde el últimos commit.
 
-<!-- ------------
+------------
 
 ## 💻 **DESARROLLO**
 
-1\. **Librería react-webcam**
+<details>
+<summary>Desplegar para ver algunas notas sobre el desarrollo</summary>
 
-Porqué he decidido usar esa librería para lanzar la cámara
+.
 
-2\. **Uso de React Router**
+1\. **Uso de React Router**
 
 Enrutamiento dinámico de las dos vistas de la navegación de la app:
 
@@ -119,19 +120,21 @@ Enrutamiento dinámico de las dos vistas de la navegación de la app:
 | Pantalla principal | Home | `/` |
 | Vista de cámara | CamView | `/cam-view` |
 
-3\. **xxx**
+.
 
-A través de un dos `<input>` (de tipo `radio` y de tipo `select`) se realiza un filtrado en la búsqueda realizada, pudiendo filtrar por uno o por los dos conceptos: GENERO y ESTADO. 
-Una vez filtrados, se renderiza de nuevo y aparece en la interfaz los personajes que cumplen esos requisitos. 
+2\. **Integración de librería React-Webcam**
 
-4\. **xxx**
+Para realizar la funcionalidad de activación de la cámara del usuario y la captura de imágenes a través de esta, se hace uso de la librería [React-Webcam](https://www.npmjs.com/package/react-webcam).
 
-Al hacer click sobre alguna de las tarjetas se pinta la tarjeta clicada a pantalla completa con el detalle de cada personaje. 
-En los detalles aparece la siguiente información: imagen, nombre, especie, planeta de origen, género,  número de episodios en los que aparece el personaje, listado de episodios, y si está vivo o muerto.
+.
+
+</details>
+
+<!-- .
 
 ------------
 
-## ✨ Detalles de calidad
+<!-- ## ✨ Detalles de calidad
 
 - Incluir el campo de texto dentro de una etiqueta `<form>` para cuidar la semántica.
 -  Impedir que el navegador envíe una petición o cambie de ruta al dar a intro sobre el campo de texto vacío aplicando un `prevent event default`.
@@ -146,11 +149,22 @@ En los detalles aparece la siguiente información: imagen, nombre, especie, plan
 *BONUS:* URL compartible
 - La URL del detalle del personaje debe ser compartible y poder acceder a ella visitándola directamente desde el navegador.
 
+ -->
+
 ------------
 
 ## 💡 Improvements
 
-- Mostrar un mensaje de error si se introduce una ruta inexistente en el navegador. -->
+*Mejoras sugeridas para desarrollar a futuro en siguientes versiones:*
+
+- Actualizar la dependencia **`immer`** a la úlitma versión recomendada (`8.0.1`).
+
+- Implementar mensaje de error si se introduce una ruta inexistente en el navegador.
+
+- Implementar componente **loader** para ofrecer y mostrar información de carga al usuario, en los siguientes casos:
+    - Durante la habilitación de la cámara por parte del usuario.
+    - En el proceso de llamadas al servidor hasta recepción de *"Approved"*.
+    - Durante la carga de la pantalla principal ***Home***, en el renderizado de la fotografía en el componente ***CardFrame***.
 
 ------------
 
