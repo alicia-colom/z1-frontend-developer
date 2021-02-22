@@ -20,22 +20,21 @@ Todo esto, siguiendo el diseño del prototipo dado en **InVision** y desarrollad
 
 ## 🛠️ **STACK TECNOLÓGICO:**
 
-- React
-- TypeScript
-- JSX
-- HTML5 + CSS3
-- Sass
-- Jest + Enzyme
-- React-Webcam
-- Git + GitHub
-- npm
-- API REST
+| React | TypeScript | JSX | API REST |
+| -- | -- | -- | -- |
+
+| HTML5 | CSS3 | Sass | React-Webcam |
+| -- | -- | -- | -- |
+
+| Jest | Enzyme | Git + GitHub | npm |
+| -- | -- | -- | -- |
 
 ------------
 
 ## 🗃️ **Estructura del proyecto**
 
-<details><summary>Desplegar para ver estructura del proyecto</summary>
+<details>
+<summary>Desplegar para ver estructura del proyecto</summary>
 
 
 ```
@@ -85,9 +84,14 @@ src
 
 ## ⚙️ **SCRIPTS DISPONIBLES**
 
+
+#### `npm install` o `yarn install`
+
+Antes de inicializar la aplicaión, hay que instalar las dependencias de las que hace uso, mediante una de estos comandos.
+
 #### `npm start` o `yarn start`
 
-Arranca la palicación en modo desarrollo.
+Arranca la aplicación en modo desarrollo.
 Abre `http://localhost:3000` para visualizarla en el navegador.
 
 La página se actualizará automáticamente con cada cambio que ocurra en el código.
