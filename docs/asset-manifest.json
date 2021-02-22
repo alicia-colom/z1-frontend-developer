@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.83e2b93d.chunk.css",
-    "main.js": "./static/js/main.5fbd113d.chunk.js",
-    "main.js.map": "./static/js/main.5fbd113d.chunk.js.map",
+    "main.css": "./static/css/main.bf440448.chunk.css",
+    "main.js": "./static/js/main.64610af2.chunk.js",
+    "main.js.map": "./static/js/main.64610af2.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.6357da46.js",
     "runtime-main.js.map": "./static/js/runtime-main.6357da46.js.map",
     "static/js/2.8d47628d.chunk.js": "./static/js/2.8d47628d.chunk.js",
     "static/js/2.8d47628d.chunk.js.map": "./static/js/2.8d47628d.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.83e2b93d.chunk.css.map": "./static/css/main.83e2b93d.chunk.css.map",
+    "static/css/main.bf440448.chunk.css.map": "./static/css/main.bf440448.chunk.css.map",
     "static/js/2.8d47628d.chunk.js.LICENSE.txt": "./static/js/2.8d47628d.chunk.js.LICENSE.txt",
     "static/media/CardFrame.scss": "./static/media/ID_bg.a826b8dc.svg",
-    "static/media/CamView.scss": "./static/media/chip_bg.34c20828.jpg"
+    "static/media/CamView.scss": "./static/media/chip_bg.cec1d95f.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.6357da46.js",
     "static/js/2.8d47628d.chunk.js",
-    "static/css/main.83e2b93d.chunk.css",
-    "static/js/main.5fbd113d.chunk.js"
+    "static/css/main.bf440448.chunk.css",
+    "static/js/main.64610af2.chunk.js"
   ]
 }
