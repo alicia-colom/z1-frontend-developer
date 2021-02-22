@@ -35,6 +35,9 @@ Todo esto, siguiendo el diseño del prototipo dado en **InVision** y desarrollad
 
 ## 🗃️ **Estructura del proyecto**
 
+<details><summary>Desplegar para ver estructura del proyecto</summary>
+
+
 ```
 src
  ├─ public
@@ -76,6 +79,7 @@ src
  ├─ index.tsx
  └─ index.scss
 ```
+</details>
 
 ------------
 
