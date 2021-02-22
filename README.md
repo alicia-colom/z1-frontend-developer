@@ -31,6 +31,28 @@ Todo esto, siguiendo el diseño del prototipo dado en **InVision** y desarrollad
 
 ------------
 
+## ⚙️ **SCRIPTS DISPONIBLES**
+
+
+#### `npm install` o `yarn install`
+
+Antes de inicializar la aplicación: instala las dependencias mediante uno de estos comandos.
+
+#### `npm start` o `yarn start`
+
+Arranca la aplicación en modo desarrollo.
+Abre `http://localhost:3000` para visualizarla en el navegador.
+
+La página se actualizará automáticamente con cada cambio que ocurra en el código.
+Igualmente, se mostrarán los errores y los warning del lint en la consola.
+
+#### `npm test` o `yarn test`
+
+Arranca la suite de tests en modo interactivo.
+Por defecto, se arrancan los tests relacionados con los archivos que hayan sufrido algún cambio desde el últimos commit.
+
+------------
+
 ## 🗃️ **Estructura del proyecto**
 
 <details>
@@ -82,28 +104,6 @@ src
 
 ------------
 
-## ⚙️ **SCRIPTS DISPONIBLES**
-
-
-#### `npm install` o `yarn install`
-
-Antes de inicializar la aplicación: instala las dependencias mediante uno de estos comandos.
-
-#### `npm start` o `yarn start`
-
-Arranca la aplicación en modo desarrollo.
-Abre `http://localhost:3000` para visualizarla en el navegador.
-
-La página se actualizará automáticamente con cada cambio que ocurra en el código.
-Igualmente, se mostrarán los errores y los warning del lint en la consola.
-
-#### `npm test` o `yarn test`
-
-Arranca la suite de tests en modo interactivo.
-Por defecto, se arrancan los tests relacionados con los archivos que hayan sufrido algún cambio desde el últimos commit.
-
-------------
-
 ## 💻 **DESARROLLO**
 
 <details>
@@ -129,27 +129,6 @@ Para realizar la funcionalidad de activación de la cámara del usuario y la cap
 .
 
 </details>
-
-<!-- .
-
-------------
-
-<!-- ## ✨ Detalles de calidad
-
-- Incluir el campo de texto dentro de una etiqueta `<form>` para cuidar la semántica.
--  Impedir que el navegador envíe una petición o cambie de ruta al dar a intro sobre el campo de texto vacío aplicando un `prevent event default`.
-- Al entrar en detalles del personaje y volver al listado de personajes se debe poder leer el texto que se había incluido inicialmente en el campo de texto.
- Para ello se recoge el valor del input y aplicando lifting se guarda en el estado del componente principal para bajarlo nuevamente al value del componente filters.
-
-*BONUS:* Mejoras visuales
-- Mostrar el estado del personaje con un icono.
-- Usar un sistema de grid para pintar el listado de personajes.
-- Cuidar el funcionamiento del responsive en dispositivos pequeños.
-
-*BONUS:* URL compartible
-- La URL del detalle del personaje debe ser compartible y poder acceder a ella visitándola directamente desde el navegador.
-
- -->
 
 ------------
 

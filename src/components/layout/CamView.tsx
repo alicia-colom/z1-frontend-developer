@@ -35,12 +35,6 @@ const CamView = (props: HandleStateProps) => {
 					props.handleIsApprovedValue(result.summary.outcome);
 
 					setCounter(counter + 1);
-					console.log(
-						'API call #',
-						counter,
-						'. Response:',
-						result.summary.outcome
-					);
 				});
 			}
 		}, 2000);
