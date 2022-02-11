@@ -16,7 +16,7 @@
 		"@types/react-router-dom": "^5.1.7",
 		"@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
 		"enzyme": "^3.11.0",
-		"node-sass": "^4.14.1",
+		"node-sass": "^7.0.0",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-router-dom": "^5.2.0",
